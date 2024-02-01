@@ -1,4 +1,5 @@
 mariadb_socket
+.direnv
 postgresql_socket
 sqlite.db
 __pycache__
