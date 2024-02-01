@@ -112,32 +112,6 @@ def generate(n):
 
     test('data/03-insert-batch', f)
 
-    # ======================================
-    # Delete all at once
-    # ======================================
-
-    def f(f):
-        f.write("DELETE FROM Wypozyczenie;\n")
-
-    test('data/04-delete-all', f)
-
-    # ======================================
-    # One insert per line
-    # ======================================
-
-    ##def f(f):
-    ##    f.write("\n\n-- Wypożyczenia\n")
-    ##    for _ in range(n):
-    ##        id_gry = random.randint(1, n)
-    ##        id_klienta = random.randint(1, n)
-    ##        id_eventu = random.randint(1, n)
-    ##        data_oddania = fake.date_time_between(start_date='-2y', end_date='now').strftime('%Y-%m-%d %H:%M:%S')
-    ##        data_dodania = fake.date_time_between(start_date='-2y', end_date='now').strftime('%Y-%m-%d %H:%M:%S')
-    ##        data_edycji = fake.date_time_between(start_date='-2y', end_date='now').strftime('%Y-%m-%d %H:%M:%S')
-    ##        data_usuniecia = fake.date_time_between(start_date='now', end_date='+2y').strftime('%Y-%m-%d %H:%M:%S')
-    ##        f.write("INSERT INTO Wypozyczenie (id_gry, id_klienta, id_eventu, data_oddania, data_dodania, data_edycji, data_usuniecia)\nVALUES\n")
-    ##        f.write(f"    ({id_gry}, {id_klienta}, {id_eventu}, '{data_oddania}', '{data_dodania}', '{data_edycji}', '{data_usuniecia}');")
-    ##test('data/05-insert-one-per-line', f)
 
     # ======================================
     # Update All
@@ -201,3 +175,30 @@ def generate(n):
         """)
 
     test('data/10-select-complex-query', f)
+
+    # ======================================
+    # Delete all at once
+    # ======================================
+
+    def f(f):
+        f.write("DELETE FROM Wypozyczenie;\n")
+
+    test('data/11-delete-all', f)
+
+    # ======================================
+    # One insert per line
+    # ======================================
+
+    #def f(f):
+    #    f.write("\n\n-- Wypożyczenia\n")
+    #    for _ in range(n):
+    #        id_gry = random.randint(1, n)
+    #        id_klienta = random.randint(1, n)
+    #        id_eventu = random.randint(1, n)
+    #        data_oddania = fake.date_time_between(start_date='-2y', end_date='now').strftime('%Y-%m-%d %H:%M:%S')
+    #        data_dodania = fake.date_time_between(start_date='-2y', end_date='now').strftime('%Y-%m-%d %H:%M:%S')
+    #        data_edycji = fake.date_time_between(start_date='-2y', end_date='now').strftime('%Y-%m-%d %H:%M:%S')
+    #        data_usuniecia = fake.date_time_between(start_date='now', end_date='+2y').strftime('%Y-%m-%d %H:%M:%S')
+    #        f.write("INSERT INTO Wypozyczenie (id_gry, id_klienta, id_eventu, data_oddania, data_dodania, data_edycji, data_usuniecia)\nVALUES\n")
+    #        f.write(f"    ({id_gry}, {id_klienta}, {id_eventu}, '{data_oddania}', '{data_dodania}', '{data_edycji}', '{data_usuniecia}');")
+    #test('data/12-insert-one-per-line', f)

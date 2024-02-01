@@ -107,7 +107,7 @@ def run_test(backend, i=1, optimized=False):
                 continue
 
             print(f'[{stats_entry}][{n}][{i}/10] {entry.name}')
-            if entry.name not in stats[stats_entry]:
+            if entry.name not in stats[stats_entry][n]:
                 stats[stats_entry][n][entry.name] = []
 
             with open(f'{entry.path}/{backend}.sql', 'r') as f:
