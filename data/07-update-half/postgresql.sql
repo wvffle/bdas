@@ -1,0 +1,1 @@
+UPDATE Wypozyczenie SET data_oddania = CURRENT_DATE WHERE id % 2 = 0;

@@ -1,0 +1,1 @@
+UPDATE Wypozyczenie SET data_usuniecia = NULL, data_oddania = NULL;
