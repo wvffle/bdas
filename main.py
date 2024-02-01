@@ -89,17 +89,7 @@ def run_test(backend, i=1, optimized=False):
 
     if backend == 'sqlite':
         if optimized:
-            execute("""
-            PRAGMA journal_mode = WAL;
-            PRAGMA synchronous = NORMAL;
-            PRAGMA temp_store = MEMORY;
-            """)
             stats_entry += '-optimized'
-        else:
-            execute("""
-            PRAGMA journal_mode = DELETE;
-            PRAGMA synchronous = FULL;
-            """)
 
     with os.scandir('data') as entries:
         for entry in entries:
